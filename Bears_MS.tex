@@ -1,0 +1,1080 @@
+\documentclass[english,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, color, amssymb, bm, natbib, fancyhdr}
+\usepackage{amsfonts}
+\usepackage[nohead]{geometry}
+\usepackage[singlespacing]{setspace}
+\usepackage{indentfirst}
+\usepackage{endnotes}
+\usepackage{verbatim}
+\usepackage{pdfpages}
+\usepackage{graphicx,xcolor}%,colortbl}xf
+\colorlet{navy}{blue!60!black}
+\usepackage{rotating}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{lscape}
+\usepackage{setspace}
+\usepackage{caption}
+\usepackage{subfigure}
+\usepackage{longtable}
+\usepackage{ragged2e}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\usepackage{url}
+\usepackage{authblk} %affiliation
+\usepackage{pdflscape}
+\usepackage{fixltx2e}
+\usepackage{textgreek}
+\usepackage{nicefrac,xfrac}
+\usepackage{subcaption}
+\usepackage{subfigure}
+\usepackage{lipsum}
+\usepackage{footnote}
+\usepackage{marvosym}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\allowdisplaybreaks
+\newcommand{\eqs}{\buildrel s \over =}
+\usepackage{lineno}
+\usepackage{pdfpages} % Insert PDFs
+
+%for citations
+\usepackage{natbib}
+\usepackage{bibentry}
+\bibliographystyle{apalike}
+\usepackage[
+colorlinks=true, linkcolor=blue!60!black,urlcolor=blue!60!black,citecolor=blue!60!black,bookmarks=true,
+bookmarksopenlevel=2]{hyperref}
+\pagestyle{plain}
+ 
+\geometry{left=1in,right=1in,top=1.00in,bottom=1.0in,footskip=.5in,headheight=0.5\baselineskip}
+
+
+\begin{document}
+%\includepdf[pages=1]{figures/workingpapertemplate.pdf}
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+
+\title{\Large{{Individual Preference Elicitation Transforms `Social Carrying Capacity' into a Pragmatic Management Tool\thanks{This project received partial support under the National Science Foundation's Established Program to Stimulate Competitive Research (EPSCoR NSF Award \#2149105) award and the Lowham fund at the University of Wyoming. The authors would like to thank Yuta Masuda for helpful comments during the writing process.}}
+}}
+
+\author{Chandler Hubbard\thanks{Department of Economics, University of Wyoming}
+\quad Ian Fletcher$^\dagger$ 
+\quad Todd Cherry$^\dagger$\\
+David Finnoff$^\dagger$ \quad Jacob Hochard\thanks{Haub School of Natural Resources, University of Wyoming} \thanks{Corresponding author. {\it \Letter:}  \href{mailto:jhochard@uwyo.edu}{jhochard@uwyo.edu}}}
+
+\date{\today}
+\maketitle
+
+% ABSTRACT
+\begin{abstract}
+\linenumbers
+\noindent Large predators are returning to landscapes where they were not seen for centuries, but traditional conservation approaches are challenged by human preferences. Communities often resist large predator recovery due to perceived risks that influence public tolerance of predators, resulting in a more restrictive ``social carrying capacity'' than corresponding biological management objectives. Wildlife managers currently lack practical methods to incorporate social science into management decisions, leaving concepts like ``wildlife acceptance capacity'' or ``social carrying capacity'' as primarily academic concepts. We address this issue by measuring individual tolerance for risks associated with grizzly bears (\emph{Ursus arctos horribilis}) and compare this tolerance to existing federal guidelines. Our results show people overestimate management’s tolerance and are more tolerant of encounters than current guidelines allow. We predict spatially specific risk management preferences across U.S. zip codes and measure the misalignment between public preferences and management guidelines. Our approach offers a pragmatic tool for assessing predator reintroduction and recovery sites, modernizing predator management through predictive mapping, and discussing resulting human-wildlife conflict intensity and management costs.
+\end{abstract}
+\bigskip
+
+\noindent\begin{tabular}{ll}
+\textit{Keywords:} Social Carrying Capacity, Risk Preferences, Predator Recovery, Wildlife Management\\
+\end{tabular}
+
+
+
+\thispagestyle{empty}
+\newpage
+
+
+\thispagestyle{empty}
+\clearpage
+
+\doublespacing
+\linenumbers
+\setcounter{page}{2}
+\section{Introduction}
+\label{sec: intro}
+Global trophic rewilding has accelerated since the late 20th century, returning many keystone predators to human-occupied landscapes \citep{svenning}. Successful \citep{smith2003yellowstone, simon2012reverse}, ongoing \citep{wilting2015planning, coogan2018towards, ditmer2023predicting}, and proposed reintroduction and recolonization \citep{connolly2023jaguars, tordiffe2023case} programs of large predators have faced local push-back despite ecological incentives \citep{ripple2014status, stier2016ecosystem}. Promoting human-predator coexistence has been a longstanding priority of wildlife managers \citep{dickman2011review, nyhus2016human}; an increasingly difficult task with the growth in outdoor recreation and residential development in the wildland-urban interface (WUI) \citep{Abrahms2021Science, abrahms2023climate, ma2024global}.
+
+Despite this, current management plans and wildlife reintroduction often have little consideration for human tolerance for wildlife risk. Instead, manager responses to predator conflict typically follow top-down federal guidelines that support recovery, developed during periods of strong conservation \citep{can2014resolving}. The management plans usually rely on a species being listed as threatened or endangered under the Endangered Species Act of 1973 (ESA), which may shift priorities from mitigating conflicts to species recovery. Yet as wildlife populations recover, the potential for human-predator conflict increases  \citep{schwartz2010hazards}. 
+
+Social tolerance of human-wildlife risks plays an important role in the success of reintroduction and recovery efforts \citep{benson2023ecology}. Social tolerance reflects the willingness to accept the risks associated with wildlife encounters and is a multidimensional concept that includes attitudes and perceptions that vary across many dimensions, including beliefs, lifestyle, experience, and location \citep{brenner2020beyond}. While incorporating aspects of social tolerance can be complicated \citep{carlson_effect_2023}, wildlife managers can improve long-term outcomes for wildlife by understanding how different stakeholders perceive and respond to wildlife-related risks \citep{gore2012gendered}. While managers adapt guidelines to account for context-specific factors, management decisions would benefit from a systematic assessment of local risk tolerance \citep{bruskotter2014determining}. This is particularly apt in rural communities where property damages, livestock losses, and threats to human safety heavily influence wildlife outcomes.
+
+While they impose risks to humans, predators benefit landscapes by providing critical ecosystem services and functioning, such as disease mitigation, agricultural production through pest management, and waste disposal \citep{o2018contribution}. Further, public discourse and the spread of information related to predators create opportunities to educate the public about ecosystem health and human-wildlife relationships \citep{soga2022towards}. Complications arise because there are heterogeneous preferences for predator conservation within and across local communities, which makes the implementation of uniform management guidelines challenging. As predator populations recover, humans and predators can better coexist with an understanding of the local community’s tolerance for predators \citep{carter2012coexistence, prugh2023fear, leighton2023trophic}. There are few empirical studies documenting public attitudes toward predator management. \cite{sage_paths_2022} estimates the ``acceptance capacity'' for grizzlies across the grizzly-inhabited landscape of Montana and Idaho, identifying hot spots of low tolerance where public policy might have the greatest effect. \cite{nesbitt_human_2023} considered Montana residents' personal opinions on grizzly abundance and how this aligns with current management. Finding thresholds in abundance, under which grizzlies are locally acceptable and a problem if the threshold is exceeded, \cite{nesbitt_human_2023} point out that there may be mismatches between the acceptance threshold and management objectives. \cite{olson_changing_2024} also consider the interplay between predator tolerance and management policy. While concerns of local stakeholders can shape active management strategies, effective management can alleviate concerns and thereby increase tolerance. In addition, for charismatic predators that live on federal public lands or have national appeal, such as grizzly bears, non-local stakeholder interests may be an important consideration in the development of management goals. In such cases, traditional active management strategies, like hunting and culling, can shift population targets to reflect preferences for a healthier, more stable species population, which may not be popular with certain stakeholders. This tradeoff highlights the need for inclusive approaches to balance heterogeneous beliefs in stakeholder values for predator management.
+
+%Focusing on biodiversity outcomes rather than willingness to pay estimates may better represent true preferences \citep{jacobsen2022lion}. Nationwide valuation of predators enables financial structures like payment programs and allows those who highly value the species to overcome adverse outcomes imposed on local communities, encouraging human-predator coexistence \citep{dickman2011review}.
+
+%Furthermore, both humans and predators can adapt to each other's presence when conscious of each other, underscoring the importance of identifying and understanding areas with elevated human risk perceptions in areas where predator populations are re-establishing . 
+
+Social tolerance for predators and wildlife in general has been considered with concepts of cultural and social carrying capacities. These concepts were introduced to understand how human attitudes and beliefs could complicate management that is largely based on the theory of competition for scarce resources. \cite{hardin1992cultural} and \cite{seidl1999carrying} noted that pressures from ``animal lovers'' could lead to mismanagement, overpopulation of game animals, and eventual population declines due to a decline in the supportive capacity of the surrounding environment. With a focus more on the sustainability of humans, the concept was not pushed at the time to the human acceptability of wildlife populations or population dynamics of human-wildlife interactions. Additionally, these studies lack a reflection of human tolerance to coexist with wildlife. As a result, the practical integration of ``social carrying capacity'' or risk tolerance in active wildlife management and legislative decisions has been limited.
+
+In this paper, we develop a method to estimate spatially specific measures of risk preferences for predator encounters, specifically grizzly bears. Risk preferences represent tolerance and are measured by the acceptable number of encounters (i.e., thresholds) before the grizzly bear is removed (i.e., euthanized). We compare our estimates of overall and location-specific tolerance with the thresholds defined in current management guidelines. Results provide new insights on the spatial variation of the local social carrying capacity of grizzly bears. More broadly, this study illustrates a potential pathway to measure and incorporate social carrying capacity into predator management, which may lead to more aligned community and management preferences and consequently more successful predator recovery \citep{slagle2017attitudes}. 
+
+%They posit and test for thresholds in abundance where grizzlies are acceptable up to a limit, yet become a problem if the limit is exceeded. Furthermore, management changes can influence predator tolerance \citep{olson_changing_2024}. Incorporating these findings into management remains a challenge. Active management strategies are often shaped primarily by local stakeholders who may prioritize immediate safety concerns and costs, emphasizing why empirical assessments of public risk perceptions are essential to informing active management strategies. However, when considering charismatic predators that have national appeal, such as grizzly bears, then non-local stakeholder values may be a key component of the management goal. In such cases, traditional active management strategies, like hunting and culling, can shift population targets to reflect preferences for a healthier, more stable species population which may not be popular with certain stakeholders. This tradeoff highlights the need for inclusive approaches to balance heterogeneous beliefs in stakeholder values for predator management.
+
+%Empirically, cultural and social carrying capacities were introduced to understand how human attitudes and beliefs could complicate management that is largely based on the theory of competition for scarce resources \citep{hardin1992cultural, seidl1999carrying}. \cite{hardin1992cultural} noted that pressures from ``animal lovers'' could lead to mismanagement, overpopulation of game animals and eventual population declines due to a decline in the supportive capacity of the surrounding environment. With a focus more on the sustainability of humans, the concept was not pushed to the human acceptability of wildlife populations or population dynamics of human-wildlife interactions. Additionally, these studies lack the human preference and tolerance to coexist with wildlife. As a result, the practical integration of ``social carrying capacity'' concepts into active wildlife management and legislative decisions has been largely limited.
+
+%In this paper, we develop a method to estimate spatially specific measures of risk preferences for wildlife encounters nationwide. How to best measure risk is often challenging for researchers, but stated preferences have served as informative in environmental topics, such as water quality, and offer a natural bridge to other environmental and ecological issues through avoidance of the bias of contingent valuation \citep{pedroni2017risk, xie2022using, bateman2023perspectives}. Risk in the context of this paper is defined as potential encounters with wildlife that will cause both physical and/or psychological harm and stress. Human-wildlife overlap is expected to increase in over 55\% of terrestrial lands by 2070, increasing the chances for human-wildlife conflict \citep{ma2024global}; despite this, current management plans and wildlife reintroductions often do not include considerations of human preferences and risk tolerance. Tolerance in this paper is defined as the amount of risk stemming from the population of bears that an individual preferences. We integrate social risk preferences into wildlife management decisions to address this gap. Specifically, we apply this method to grizzly bear reintroduction in the grizzly-occupied states of Idaho, Montana, and Wyoming. We assess local and non-local tolerance for human-wildlife interactions as critical factors in determining the social carrying capacity for grizzly bears. Local preferences are crucial for guiding wildlife management decisions, as these individuals are most likely to experience direct human-wildlife conflict. However, the preferences of non-local stakeholders—who may be less directly impacted—are also important, as predators thriving on public lands generate significant existence value for a broad range of communities. The results justify using this method as a pathway to formally measure and integrate social carrying capacity into wildlife management. By integrating local risk preferences into modern predator management, community preferences, and management responses would be more aligned \citep{slagle2017attitudes}, improving management strategies and social acceptance of predator recovery.
+
+\section{Methods}
+\label{sec: methods}
+To facilitate grizzly bear recovery, federal and state agencies collaborated to formulate and approve ``Interagency Grizzly Bear Guidelines'' that established standard management responses for conflicts of varying severity \citep{BearReport}. While the guidelines are dated, they remain the authoritative source governing management responses to ``nuisance'' grizzly bears. Summarized in Table \ref{tab:guidelines}, the guidelines are organized around the severity and frequency of grizzly bear encounters, which determine the appropriate response by management\footnote{For our survey, we only asked about individual preferences for adult female grizzly bears due to their critical role in population growth and expansion.}. Grizzly bear encounters are classified into one of three types, with human injury having the greatest degree of severity:
+\begin{itemize}
+    \item \textbf{Property:} The bear depredates livestock or accesses secured unnatural food materials (human and livestock foods, garbage, gardens, and game meat).
+    \item \textbf{Threat:} The bear has displayed aggressive (not defensive) behavior toward humans and/or caused minor human injury.
+    \item \textbf{Injury:} The bear has caused substantial human injury or loss of human life.
+\end{itemize}
+Depending on the type and frequency of the encounter, the guidelines of direct management are to take one of the following two responses:
+\begin{itemize}
+    \item \textbf{Relocation:}  The bear is captured and moved away, typically 40-90 miles from the encounter location.
+    \item \textbf{Removal:}  The bear is captured and euthanized (i.e., killed).
+\end{itemize}
+An important element for management (and this study) is that, for each type of encounter, the number of accumulated encounters by a specific bear determines the appropriate response. For example, one property encounter by an adult female grizzly bear leads to relocation, while the third property encounter will lead to removal.
+
+Using this framework, we designed a survey to measure individual tolerance for the risk of grizzly bear encounters, which can be aggregated to reflect social tolerance or carrying capacity. The survey has four sections---warm-up, background, management, and demographic. After receiving informed consent, the \textit{warm-up section} elicited knowledge and attitudes towards national parks and wildlife management. Next, a \textit{background section} provided baseline information about the framework used for grizzly bear management. This section describes the types of encounters, and an incident count (threshold) of each type would trigger relocation or removal. The current threshold in the guidelines was not shared, just that thresholds exist.
+
+The \textit{management section} elicited respondents’ preferred level of tolerance and their beliefs about the actual tolerance of management for adult female bears.\footnote{We follow a larger literature that elicits stated preferences to estimate social preferences, such as preferences for environmental health risks \citep{adamowicz2014}, recovery of threatened species \citep{boxall_complexity_2009}, forest management \citep{horne_multiple-use_2005}, water quality \citep{bateman2023perspectives}, etc. For a review of the method, see \cite{johnston_contemporary_2017}.} To do so, we frame tolerance within the grizzly bear management guidelines. We elicit the respondent’s preferred tolerance by asking ``For each type of encounter, give your preferred removal threshold (if any) in an ideal policy. In other words, what do you think should be the number of encounters that cause a bear to be removed?'' Similarly, to elicit the respondent’s beliefs about actual tolerance by management, we ask ``For each type of encounter, give your best guess of the current policy’s removal threshold. In other words, what do you think is the current number of encounters that cause a bear to be removed?'' Therefore, this section provides data on individual beliefs about preferred and actual management tolerance, with higher (lower) thresholds revealing greater (lower) tolerance for the risk of grizzly bear encounters. We compare respondent beliefs about preferred and actual tolerance to the objective tolerance defined by the thresholds outlined in the Interagency Grizzly Bear Guidelines. 
+
+The \textit{follow-up section} asks respondents to indicate their experience with grizzly bear habitat, grizzly bear encounters, and any risk reduction actions taken to mitigate the risk of grizzly bear encounters.
+The survey concluded with a \textit{demographic section} that collected socioeconomic information about age, income, sex, political affiliation, education, and state of residence. The full survey instrument, including specific question wording, is provided in Section \ref{sec:survey}.
+
+The sample, protocols, and instrument were reviewed and determined exempt by the University of Wyoming's Institutional Review Board $(\#20230425TC03550)$. Respondents $(N=1157)$ were recruited online by Qualtrics with quotas to achieve a more representative sample.\footnote{Qualtrics maintains a nationally representative database of respondents and employs quality control measures including attention check questions and automated detection methods (e.g., straight-lining patterns, completion time) to filter responses. Participation in our survey was restricted to adults (18+) in the United States. Qualtrics estimated distributions of 30\% 18-34 years old, 32\% 35-54 years old, and 38\% 55+ years old for age and 48\% male and 52\% female for sex.} To facilitate habitat-specific analysis, we follow the literature \citep[e.g.][]{kalton2009methods} and oversample the states most affected by grizzly bear encounters and grizzly bear management--Idaho, Montana, and Wyoming. The disproportionately large sample ($N=307$) better ensures statistical power for the location-specific analysis of grizzly-habitat states. Table \ref{tab: rep_check} provides a comparison of sample and population characteristics.
+
+To consider the spatial distribution of tolerance, we merge the primary data from the survey with secondary data from multiple sources, including the U.S. Census Bureau’s American Community Survey, U.S. Fish and Wildlife Service, and the National Land Cover Database. A complete list of variables and sources for secondary data is given in Table \ref{tab:data}. We estimate a model of individual preferences and beliefs for the number of encounters that trigger removal. Estimated coefficients are used to conduct out-of-sample zip code-level predictions of beliefs and desires, which are mapped for the contiguous United States.
+
+
+\section{Results}
+\label{sec: results}
+The overarching finding is that respondents prefer a more tolerant approach than current grizzly bear management dictates (the current guidelines are outlined in Table \ref{tab:guidelines})\footnote{Managers indicated, at the time of writing, that depending on the overall population in an area, the number of allowed encounters could be increased or decreased above and below the written guidelines. Still, managers were confident that the stated guidelines hold on average. This administrative discretion is common in wildlife management and has been shown to reduce the number of conflicts in other predators \citep{stier2016ecosystem, young2019interactions}.}. National respondents, relative to the actual guidelines, are willing to accept a greater number of encounters before the bear is removed (Figure \ref{fig:national-results}). This finding emerges for all types of encounters---property, threat, and injury. Specifically, respondents indicated the preferred number of encounters to trigger removal is $3.8$ for property, $3.1$ for threat, and $2.6$ for injury, which is significantly greater than the actual thresholds of $3$, $2$, and $1$ $(p < 0.001)$.
+
+For each type of encounter, respondents overestimate the level of tolerance defined by the management guidelines (Figure \ref{fig:national-results}). For property and threat encounters, respondents correctly identified a misalignment between their preferred and actual tolerance levels, though their beliefs about the actual level reveal they underestimate the magnitude of these misalignments. For injury encounters, preferred and believed tolerance levels are statistically equivalent, which indicates that respondents mistakenly believe the tolerance of managers closely aligns with their preferred tolerance.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/resultsNational.pdf}
+    \caption{National results - Mean number of believed, preferred, and actual encounters that trigger removal and respective 95\% confidence intervals. }
+    \label{fig:national-results}
+\end{figure}
+
+Results were similar when only considering the respondents from the states that are most affected by grizzly bear encounters and management---Idaho, Montana, and Wyoming (Figure \ref{fig:regional-results}). As with the national sample, the respondents in states with grizzly bear habitat indicated significantly greater tolerance levels than those outlined in the guidelines. Also similar to the national results, respondents correctly identified the misalignment between preferred and actual tolerance for property and threat encounters, but not for injury encounters.\footnote{We further refine the regional analysis by stratifying respondents by those located within 50 miles of grizzly bear habitat and those outside 50 miles, and the results are similar across the two groups (Figure \ref{fig:subregional-results}).}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/resultsRegional.pdf}
+    \caption{Rocky Mountain States (ID, MT, WY) results  - Mean number of believed, preferred, and actual encounters that trigger removal with respective 95\% confidence intervals.}
+    \label{fig:regional-results}
+\end{figure}
+
+Overall, the aggregate numbers offer three key findings. First, results indicate that people prefer a level of tolerance significantly greater than the actual tolerance defined in the guidelines. Second, though people are largely aware of this misalignment (injury encounters being the exception), they underestimate the magnitude of the misalignment. Finally, these general findings emerged nationally and in states most affected by the presence and management of grizzly bears.
+
+To extend the analysis, we consider a more refined spatial characterization by estimating a model to generate out-of-sample zip-code-level predictions for believed and preferred tolerance for grizzly bear encounters. To do so, we use the following model:
+
+\begin{equation}
+    D_{i,j} = \alpha + \beta X_{i,j} + \gamma Z_{i,j} + \varepsilon_{i,j},
+    \label{eqn:main}
+\end{equation}
+
+in which $D_{i,j}$ is respondent $i$'s stated belief/preference for the number of encounters that trigger management action, $X_{i.j}$ is a vector of individual-specific characteristics (e.g., age, income, education, etc.), $Z_{i,j}$ is a vector of location-specific characteristics (e.g., distance to grizzly habitat, region, percentage of total land designated cropland, pastureland, grassland, developed land, etc.) associated with respondent $i$'s zip-code $j$, $\alpha$ is the constant term, and $\varepsilon_{i,j}$, is an idiosyncratic error term.
+
+Before continuing to the spatial predictions, we note two things about Equation \ref{eqn:main}. First, we employ a censored Poisson model because $D_{i,j}$ captures count data that is censored from above\footnote{Overdispersion is not evident in the data, thus the Poisson model is preferred to the Negative Binomial model.}. Second, we estimate two models--- preferred tolerance for removal (model 1) and believed (model 2) tolerance for removal. Specific coefficient estimates are reported in Tables~\ref{tab: des_inc}-\ref{tab: des_int} for model 1 and Tables~\ref{tab: bel_inc}-\ref{tab: bel_int} for model 2.
+
+Using zip-code-level social and demographic ($\bar{X}_j$), geographic and landscape characteristics ($\bar{Z}_j$) outlined above, we expand our results from the in-sample estimation to conduct an out-of-sample prediction ($\hat{D}_{i,j}$) of stated beliefs/preferences for each zip code $j$ in the contiguous United States. Note, if zip-code specific data in aggregated form are missing (either $\bar{X}_j$ or $\bar{Z}_j$), we exclude the zip-code from predictive maps. Also, given that property encounters account for most encounters, we present the results for the tolerance for property counters (Figures \ref{fig:BA}-\ref{fig:DB}). See the Supplemental Information for the results for human threat (Figures \ref{fig:TBA}-\ref{fig:TDB}) and injury encounters (Figures \ref{fig:IBA}-\ref{fig:IDB}).
+
+We use the zip code level predictions to create three national maps that offer a spatial representation of our findings. We start with Figure \ref{fig:DA}, which illustrates the difference between the local social tolerance (\textit{preferred}) and the overall management tolerance set by the national guidelines (\textit{actual}). Thus, the map shows the spatial variation of the misalignment between the social and management tolerances for the risk of grizzly bear encounters. Across all zip codes, estimates indicate that social tolerance is larger than current management, but the extent of this misalignment varies across space. The greatest misalignment is found in the Midwest, Northeast, and West Coast (darker blue). Of particular interest are the areas in and around grizzly habitat, and while estimates suggest social tolerance exceeds management tolerance in these areas, the magnitude is smaller than in other areas (lighter green).
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/prop_pref-act.pdf}
+    \caption{The predicted difference between the preferred and actual number of \textbf{property}  encounters required to trigger management actions based on an estimating sample of $N=975$ zip codes and predicted for $N=33144$ zip codes nationally.}
+    \label{fig:DA}
+\end{figure}
+
+We now consider two additional maps that offer further insights into the gap between social and management tolerance. Figure \ref{fig:BA} illustrates the difference between \textit{believed} and \textit{actual} management tolerance, which speaks to the respondents’ local knowledge of management policy. And Figure \ref{fig:DB}, by mapping the difference between \textit{preferred} and \textit{believed} tolerance, reflects the local awareness of any misalignment between social and management tolerance. 
+
+From these maps, a few interesting results emerge. First, while we might expect residents in grizzly bear-occupying areas to be most familiar with actual management practices, estimates indicate these areas tend to have larger overestimates of management tolerance (darker shades in Figure \ref{fig:BA}). This translates to grizzly areas being relatively unaware that management tolerance does not align with local social tolerance (lighter and red shades in Figure \ref{fig:DB}). The story differs for the West Coast and Pacific Northwest regions. Estimates suggest these areas have relatively more knowledge of current grizzly management with perceptions about current practice closely aligning with actual management (lighter shades in Figure \ref{fig:BA}). Consequently, the West Coast and Pacific Northwest regions are more aware that management tolerance does not align with their preference for greater tolerance (darker shades in Figure \ref{fig:DB}).
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/prop_bel-act.pdf}
+    \caption{The predicted difference between the believed and actual number of \textbf{property} encounters required to trigger management actions based on an estimating sample of $N=975$ zip codes and predicted for $N=33144$ zip codes nationally.}
+    \label{fig:BA}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/prop_pref-bel.pdf}
+    \caption{The predicted difference between the preferred and believed number of \textbf{property}  encounters required to trigger management actions based on an estimating sample of $N=975$ zip codes and predicted for $N=33144$ zip codes nationally.}
+    \label{fig:DB}
+\end{figure}
+
+We repeat this exercise for the more severe and less common threat and injury encounters. For succinctness, we provide the estimates and maps in the Supplemental Material (Tables \ref{tab: des_inc}-\ref{tab: bel_int}; Figures \ref{fig:TDA}-\ref{fig:IDB}). However, we note some findings that differ from the property encounter results. As with property encounters, local social tolerance for the risk of threat and injury encounters is universally greater than management practice (Figures \ref{fig:TDA} and \ref{fig:IDA}). But unlike property encounters, the misalignment is smallest in the Rocky Mountain and Great Lakes regions, and largest in the coastal areas. Also, estimates indicate that grizzly-occupying areas are relatively more knowledgeable about management tolerance for the risk of threat and injury encounters (Figures \ref{fig:TBA} and \ref{fig:IBA}), which contrasts with these areas being relatively less knowledgeable about property encounters. For both threat and injury encounters, estimates suggest that grizzly areas mistakenly believe the locally desired social tolerance towards grizzly bears is closely reflected by management policy (Figures \ref{fig:TDB} and \ref{fig:IDB}), a result that is common to the property damage setting. 
+
+\section{Discussion}
+\label{sec: discussion}
+The success of predator recovery hinges on effectively managing human-wildlife conflict in communities reoccupied by native species. Social tolerance or social carrying capacity plays an important role in managing human-wildlife conflicts. By 2070, human-wildlife overlap is expected to increase in over 55\% of terrestrial lands, increasing the chances for human-wildlife conflict \citep{ma2024global}; despite this, and arguments made in the human dimensions of wildlife literature \citep{nesbitt_human_2023}, modern approaches to wildlife management often overlook systematic measurement and integration of social tolerance, favoring top-down, one size fits all, guidelines applied to diverse local contexts. Herein, we undertake a novel approach to measure social tolerance of human-wildlife encounters and illustrate how it can inform local adaptive wildlife management. 
+
+Focusing on grizzly bears, our study finds that the social tolerance of the risks associated with human-grizzly encounters is generally much larger than the tolerance outlined by the top-down, federal management guidelines. Further, results show significant variation in social tolerance across local and regional areas, which highlights the potential benefits of locally tailored approaches to wildlife management. Equipped with this type of information, wildlife managers can better navigate the competing interests that affect recovery and management efforts. For example, a better understanding of local carrying capacity can allow more effective communications about current actions as well as more appropriate and intentional adjustments to management policies. 
+
+For the grizzly-occupying states of Idaho, Montana, and Wyoming, we find that residents believe that agency actions mirror their preferences when the local community is more tolerant of potential human-grizzly interactions. To illustrate, public petitions demanded relocation, not removal, in three recent cases: the well-known Yellowstone grizzly ``Blaze'' in 2015, grizzly 1057 (offspring of the famous grizzly 399) in 2022, and a West Yellowstone female with a cub in 2023. Yet, all three bears were euthanized \citep{zuckerman2015euthanization, wp2023grizzly, baitinger2024headless}. These episodes demonstrate the potential for conflict when there is a gap between local risk tolerance and management action. Incorporating quantitative estimates of social tolerance would allow managers to select non-lethal responses (or justify lethal ones) with improved community expectation alignment. 
+
+Grizzly bears are charismatic, threatened, and reside on federal public lands, which makes them relevant beyond areas inside and nearby grizzly habitat areas. For such species, management may consider the tolerance of all people (local and non-local) who benefit from wildlife conservation. Current practices, such as public comments and town halls, are often biased towards the loudest voices, potentially overlooking important local and non-local perspectives. Such practices operate in tandem with the human dimensions of wildlife literature that offer managers tools for decision-making \citep{bruskotter2014determining, pooley2021rethinking, bockarjova2022estimating}. Our work contributes to this toolkit. While local and non-local preferences may not be weighted equally, both may be relevant. Incorporating broader views could improve the overall alignment of management actions with public sentiment. 
+
+Mapping local and non-local wildlife management preferences emphasizes the importance of representing social tolerance in a comparable fashion to the current management variables, such as ecological or biological carrying capacity. Understanding preferences for wildlife management can also help target predator recovery efforts more intentionally. While habitat suitability is often well-understood, social acceptance may be less predictable. Using social tolerance, as measured by the method employed in our paper, managers can compare biological carrying capacity more directly with social tolerance rather than relying on indirect inferences. For example, informally discussed recovery efforts in the Sierra Nevada (California) may require more management tolerance than similar efforts around the Mogollon Rim (Arizona) due to differing levels of local support. This information is important when prioritizing conservation projects, as it impacts management costs and the likelihood of success. By evaluating these trade-offs, managers can improve the outcomes of species restoration programs and resource allocation. 
+
+Introducing social carrying capacity and our preference elicitation technique provides a management tool with broader applicability beyond wildlife decisions. By measuring national preferences and understanding current management strategies, adaptations to management strategies can be better informed with the locally dependent social carrying capacity. For example, some areas where a belief and preference of policy may prove useful are wildfire mitigation, pipeline approvals, or environmental crises like the Gulf of Mexico Dead Zone and Great Lakes Algal Blooms. By incorporating human risk perceptions and social preferences into environmental policymaking, our technique makes nature-based solutions ecologically effective and socially acceptable. Thus leading to more successful implementation and greater overall impact in various environmental initiatives \citep{bockarjova2022estimating}. While local preferences remain valuable and are perhaps the most important for successful recovery \citep{ingeman2022glimmers}, incorporating the views of national constituents can enhance decision-making, especially when managing a wildlife population or alternative resource on federal lands. Our proposed social tolerance measurement should be seen as an additional tool for managers, complementing existing practices like town halls and online forums, to measure public opinion directly.
+
+\section{Acknolwedgements}
+\noindent \textbf{Author Contributions} All authors designed and performed research; analyzed, collected, and assembled the data; and contributed to writing the paper.
+
+\noindent \textbf{Competing Interests} The authors declare that they have no competing financial interests.
+
+\newpage
+\bibliography{bears}
+\appendix
+\section{Supplemental Figures} \label{sec: app-figs}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/threat_pref-act.pdf}
+    \caption{The predicted difference between the preferred and actual number of \textbf{human threat} encounters required to trigger management actions based on an estimating sample of $N=975$ zip codes and predicted for $N=33144$ zip codes nationally.}
+    \label{fig:TDA}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/threat_bel-act.pdf}
+    \caption{The predicted difference between the believed and actual number of \textbf{human threat} encounters required to trigger management actions based on an estimating sample of $N=975$ zip codes and predicted for $N=33144$ zip codes nationally.}
+    \label{fig:TBA}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/threat_pref-bel.pdf}
+    \caption{The predicted difference between the preferred and believed number of \textbf{human threat} encounters required to trigger management actions based on an estimating sample of $N=975$ zip codes and predicted for $N=33144$ zip codes nationally.}
+    \label{fig:TDB}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/inj_pref-act.pdf}
+    \caption{The predicted difference between the preferred and actual number of \textbf{human injury} encounters required to trigger management actions based on an estimating sample of $N=975$ zip codes and predicted for $N=33144$ zip codes nationally.}
+    \label{fig:IDA}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/inj_bel-act.pdf}
+    \caption{The predicted difference between the believed and actual number of \textbf{human injury} encounters required to trigger management actions based on an estimating sample of $N=975$ zip codes and predicted for $N=33144$ zip codes nationally.}
+    \label{fig:IBA}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/inj_pref-bel.pdf}
+    \caption{The predicted difference between the preferred and believed number of \textbf{human injury} encounters required to trigger management actions based on an estimating sample of $N=975$ zip codes and predicted for $N=33144$ zip codes nationally.}
+    \label{fig:IDB}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/resultsSubRegional.pdf}
+    \caption{Respondents in and out of grizzly bear habitat within the Rocky Mountain Region (Wyoming, Montana, Idaho) results showing the comparison of the average believed, average preferred, and actual number of encounters required to trigger management action for each type of encounter with 95\% confidence bars.}
+    \label{fig:subregional-results}
+\end{figure}
+
+\newpage
+\section{Supplemental Tables} \label{sec: app-tabs}
+\begin{table}[h]
+    \centering
+    \caption{Management Guidelines for Removals}
+\begin{tabular}{lccc}\toprule
+                      & \multicolumn{1}{l}{} & \multicolumn{1}{l}{Number of Encounters} & \multicolumn{1}{l}{} \\
+\textbf{Type of Bear} & Property             & Human Threat                             & Human Injury         \\ \midrule
+Young Female          & 3                    & 2                                        & 1                    \\
+\textit{Adult Female}         & 3                    & 2                                        & 1                    \\
+Old Female            & 2                    & 1                                        & 1                    \\
+Male                  & 2                    & 1                                        & 1                    \\
+Orphaned Cub          & 3+                   & 2+                                       & 1 \\\bottomrule                  
+    \end{tabular}
+    \begin{minipage}{.8\textwidth} 
+    \vspace{1em}
+    \footnotesize{{\bf{Note:}} This table reports the management guidelines for the number of encounters to trigger removal by type of bear as outlined in \cite{BearReport}. These guidelines are still the baseline for management decisions. The survey conducted in this paper referred to Adult Female bears, as they are the most critical to species conservation success.}
+    \label{tab:guidelines}
+    \end{minipage}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \caption{Secondary Data Detailed Description}
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{@{}llll@{}}
+    \toprule
+    Variable           & Description                                 & Type                 & Source            \\ \midrule
+    Age                & Individual's age                            & Continuous (binned)  & ACS               \\
+    Income             & Annual Household Income in 2022             & Continuous (binned)  & ACS               \\
+    Political Identity & Political Affiliation                       & Categorical          & Harvard Dataverse \\
+    Education          & Highest Degree Obtained                     & Categorical          & ACS               \\
+    Sex                & Individual's sex                            & Categorical          & ACS               \\
+    Region             & Indicator if zip code is in states with current grizzly bear habitat & Binary & USFWS \\
+    Historical Range          & Indicator if zip code is in historical grizzly bear habitat        & Binary & USFWS     \\
+    Distance to Current Range & Distance (m) from zip code to nearest current grizzly bear habitat & Continuous & USFWS \\
+    Developed Land     & Percentage of zip code that is developed    & Percentage           & NCLD \\
+    Cropland           & Percentage of zip code that is cropland     & Percentage           & NCLD \\
+    Pasture Land       & Percentage of zip code that is pasture land & Percentage           & NCLD \\
+    Grassland          & Percentage of zip code that is grassland    & Percentage           & NCLD \\\bottomrule
+    \end{tabular}}
+    \begin{minipage}{.8\textwidth}
+    \vspace{1em}
+    \footnotesize{{\bf{Note:}} This table reports a description for each variable sourced from a secondary data source used in the predictive mapping exercise described in Section \ref{sec: methods}. ``Variable'' is the variable of interest. Description provides a simple description of what the variable measures. Type is how the variable is measured. ``Source'' is the source we use to get information for predictive mapping.}
+    \label{tab:data}
+    \end{minipage}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Comparison of the Survey Sample with the Underlying Population}
+    \begin{tabular}{@{}llllll@{}}
+        \toprule
+        	&\multicolumn{2}{c}{ID, MT, WY} & \multicolumn{3}{c}{Rest of the Country}\\
+            &\multicolumn{1}{c}{(a)}   &\multicolumn{1}{c}{(b)}   &\multicolumn{1}{c}{(c)} &\multicolumn{1}{c}{(d)} &\multicolumn{1}{c}{(e)} \\
+                           & \multicolumn{1}{c}{Pop}     & \multicolumn{1}{c}{Sample}     & \multicolumn{1}{c}{Pop}      & \multicolumn{1}{c}{Sample} & \multicolumn{1}{c}{Prop}   \\ \midrule
+	\textbf{Age}		   & &  &   &   &       \\
+    18-34				   & 26.8\%   & 38.76\%      & 28.9\%   & 26.94\% & 30\%  \\
+    35-54				   & 31.7\%   & 36.81\%      & 32.5\%   & 30.35\% & 32\%  \\
+    55+      			   & 39.5\%   & 24.43\%      & 38.6\%    & 42.71\% & 28\% \\ \midrule
+    \textbf{Gender}		   &		  &              &           &                \\
+    Male     			   & 50.4\%   & 24.43\%      & 49.8\%    & 48.59\% & 48\% \\
+    Female				   & 49.6\%   & 75.57\%      & 50.2\%    & 48.41\% & 52\% \\\midrule
+    \textbf{Education}	   &		  &              &           &                \\
+    HS Grad or Less        & 35.9\%   & 31.92\%      & 37.5\%    & 26.82\% &      \\
+    Some College		   & 25.5\%   & 29.64\%      & 19.7\%    & 30.0\%  &      \\
+    Associates Degree      & 8.9\%    & 10.10\%      & 9.2\%     & 12.35\% &      \\
+    College 4 Year Degree  & 19.9\%   & 16.29\%      & 20.2\%    & 20.94\% &      \\
+    Postgraduate Degree    & 9.8\%    & 12.05\%      & 13.3\%    & 9.88\%  &      \\\midrule
+    \textbf{Income}	       &		  &              &           &         &      \\
+    $<\$15,000$            & 6.4\%     & 18.24\%      & 3.2\%     & 12.59\% &      \\
+    $\$15,000 - \$24,999$  & 5.8\%     & 8.79\%       & 5.9\%     & 11.76\% &      \\
+    $\$25,000 - \$34,999$  & 7.0\%     & 16.94\%      & 11.0\%    & 12.00\% &      \\
+    $\$35,000 - \$49,999$  & 10.8\%   & 12.05\%      & 18.9\%    & 13.41\%  \\
+    $\$50,000 - \$74,999$  & 18.0\%   & 21.50\%      & 24.6\%    & 20.71\%  \\
+    $\$75,000 - \$99,999$  & 14.5\%   & 10.10\%      & 13.4\%    & 12.12\%  \\
+    $>\$100,000$           & 37.5\%   & 12.38\%      & 23.0\%    & 17.41\%  \\ \midrule
+    N                      &          & 307          &           & 850      \\\bottomrule
+    \end{tabular}
+    \begin{minipage}{.9\textwidth} 
+        \vspace{1em}
+    \footnotesize{{\bf{Note:}} This table reports the distribution of demographic characteristics among the underlying population alongside the recorded distribution in our samples for Rocky Mountain States (Idaho, Montana, and Wyoming) and the rest of the United States, respectively. We also include the estimated distributions for age and sex as provided by Qualtrics. Pop lists the distribution of demographics across the regions. ``Sample'' lists the distribution of demographics across the regions. Prop lists the proposed distribution Qualtrics expected of individuals over the age of 18 before survey deployment. All demographic distribution estimates for the underlying populations are from the U.S. Census Bureau's American Community Survey.}
+    \label{tab: rep_check}
+    \end{minipage}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Coefficients Table for Believed Number of Encounters - Income Controls}
+    \footnotesize
+    \begin{tabular}{@{}llll@{}}
+        \toprule
+                           &\multicolumn{1}{c}{(1)}   &\multicolumn{1}{c}{(2)}   &\multicolumn{1}{c}{(3)}  \\
+                           & Property & Human Threat & Human Injury \\ \midrule
+        Between \$15,000 and \$24,999&      -0.031   &       0.062   &       0.021   \\
+                    &     (0.074)   &     (0.073)   &     (0.078)   \\
+        Between \$25,000 and \$34,999&      -0.063   &      -0.090   &      -0.017   \\
+                    &     (0.070)   &     (0.071)   &     (0.075)   \\
+        Between \$35,000 and \$49,999&      -0.022   &      -0.099   &      -0.213***\\
+                    &     (0.071)   &     (0.073)   &     (0.078)   \\
+        Between \$50,000 and \$64,999&       0.008   &       0.062   &       0.018   \\
+                    &     (0.069)   &     (0.070)   &     (0.074)   \\
+        Between \$65,000 and \$74,999&       0.029   &      -0.009   &      -0.060   \\
+                    &     (0.086)   &     (0.088)   &     (0.094)   \\
+        Between \$75,000 and \$99,999&      -0.020   &      -0.042   &      -0.085   \\
+                    &     (0.074)   &     (0.075)   &     (0.080)   \\
+        Between \$100,000 and \$149,999&      -0.023   &      -0.035   &      -0.153*  \\
+                    &     (0.080)   &     (0.081)   &     (0.088)   \\
+        Between \$150,000 and \$199,999&      -0.125   &       0.034   &      -0.058   \\
+                    &     (0.116)   &     (0.116)   &     (0.127)   \\
+        \$200,000 or more&       0.239*  &       0.028   &      -0.191   \\
+                    &     (0.127)   &     (0.125)   &     (0.141)   \\\midrule                       
+        Constant    &       1.648***&       0.882***&       0.791***\\
+                    &     (0.264)   &     (0.272)   &     (0.292)   \\
+        Observations & 1,157    &  1,157       & 1,157        \\\bottomrule
+    \end{tabular}
+    \begin{minipage}{.9\textwidth}
+            \vspace{1em}
+    \footnotesize{{\bf{Note:}} This table reports the coefficient for income variables in equation~\ref{eqn:main}. In column (1), we measure the believed number of property encounters before removal. In column (2), we measure the believed number of human threat encounters before removal. In column (3), we measure the believed number of human injury encounters before removal. Clustered standard errors are provided in the parentheses below the coefficient estimates. ***, **, * indicates 1\%, 5\%, and 10\% statistical significance, respectively.}
+    \label{tab: bel_inc}
+    \end{minipage}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Coefficients Table for Believed Number of Encounters - Age Controls}
+    \footnotesize
+    \begin{tabular}{@{}llll@{}}
+        \toprule
+                           &\multicolumn{1}{c}{(1)}   &\multicolumn{1}{c}{(2)}   &\multicolumn{1}{c}{(3)}  \\
+                           & Property & Human Threat & Human Injury \\ \midrule
+        20 to 24 years&      -0.198   &      -0.067   &       0.170   \\
+                    &     (0.123)   &     (0.122)   &     (0.128)   \\
+        25 to 34 years&      -0.046   &      -0.043   &       0.056   \\
+                    &     (0.115)   &     (0.115)   &     (0.122)   \\
+        35 to 44 years&      -0.048   &      -0.012   &       0.087   \\
+                    &     (0.115)   &     (0.115)   &     (0.122)   \\
+        45 to 54 years&       0.018   &      -0.087   &      -0.060   \\
+                    &     (0.117)   &     (0.118)   &     (0.126)   \\
+        55 to 59 years&       0.044   &      -0.142   &      -0.145   \\
+                    &     (0.122)   &     (0.124)   &     (0.133)   \\
+        60 to 64 years&       0.069   &      -0.077   &      -0.075   \\
+                    &     (0.122)   &     (0.123)   &     (0.132)   \\
+        65 to 74 years&      -0.067   &      -0.128   &      -0.134   \\
+                    &     (0.119)   &     (0.120)   &     (0.129)   \\
+        75 to 84 years&      -0.117   &      -0.143   &      -0.063   \\
+                    &     (0.139)   &     (0.141)   &     (0.150)   \\
+        85 years or more&      -0.085   &      -0.082   &      -0.215   \\
+                    &     (0.251)   &     (0.259)   &     (0.289)   \\\midrule                       
+        Constant    &       1.648***&       0.882***&       0.791***\\
+                    &     (0.264)   &     (0.272)   &     (0.292)   \\
+        Observations & 1,157    &  1,157       & 1,157        \\\bottomrule
+    \end{tabular}
+    \begin{minipage}{.9\textwidth}
+            \vspace{1em}
+    \footnotesize{{\bf{Note:}} This table reports the coefficient for age variables in equation~\ref{eqn:main}. In column (1), we measure the believed number of property encounters before removal. In column (2), we measure the believed number of human threat encounters before removal. In column (3), we measure the believed number of human injury encounters before removal. Clustered standard errors are provided in the parentheses below the coefficient estimates. ***, **, * indicates 1\%, 5\%, and 10\% statistical significance, respectively.}
+    \label{tab: bel_age}
+    \end{minipage}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Coefficients Table for Believed Number of Encounters - Ideology and Education Controls}
+    \footnotesize
+    \begin{tabular}{@{}llll@{}}
+        \toprule
+                           &\multicolumn{1}{c}{(1)}   &\multicolumn{1}{c}{(2)}   &\multicolumn{1}{c}{(3)}  \\
+                           & Property & Human Threat & Human Injury \\ \midrule
+        Liberal     &      -0.082   &       0.213** &       0.133   \\
+                    &     (0.085)   &     (0.089)   &     (0.096)   \\
+        Moderate    &      -0.144*  &       0.170** &       0.202** \\
+                    &     (0.076)   &     (0.080)   &     (0.086)   \\
+        Conservative&      -0.122   &       0.175** &       0.116   \\
+                    &     (0.080)   &     (0.084)   &     (0.091)   \\
+        Very conservative&      -0.182** &       0.158*  &       0.173*  \\
+                    &     (0.092)   &     (0.095)   &     (0.103)   \\
+        HS Graduate &      -0.024   &       0.017   &      -0.065   \\
+                    &     (0.116)   &     (0.117)   &     (0.120)   \\
+        Some college&       0.073   &      -0.036   &      -0.182   \\
+                    &     (0.116)   &     (0.118)   &     (0.121)   \\
+        Associate's Degree&       0.099   &       0.063   &      -0.090   \\
+                    &     (0.123)   &     (0.124)   &     (0.129)   \\
+        Bachelor's Degree&       0.105   &      -0.072   &      -0.233*  \\
+                    &     (0.121)   &     (0.123)   &     (0.127)   \\
+        Graduate Degree&       0.051   &      -0.114   &      -0.203   \\
+                    &     (0.128)   &     (0.131)   &     (0.136)   \\\midrule                       
+        Constant    &       1.648***&       0.882***&       0.791***\\
+                    &     (0.264)   &     (0.272)   &     (0.292)   \\
+        Observations & 1,157    &  1,157       & 1,157        \\\bottomrule
+    \end{tabular}
+    \begin{minipage}{.9\textwidth} 
+            \vspace{1em}
+    \footnotesize{{\bf{Note:}} This table reports the coefficient for political ideology and educational attainment variables in equation~\ref{eqn:main}. In column (1), we measure the believed number of property encounters before removal. In column (2), we measure the believed number of human threat encounters before removal. In column (3), we measure the believed number of human injury encounters before removal. Clustered standard errors are provided in the parentheses below the coefficient estimates. ***, **, * indicates 1\%, 5\%, and 10\% statistical significance, respectively.}
+    \label{tab: bel_edu}
+    \end{minipage}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Coefficients Table for Believed Number of Encounters - Remaining Demographic and Distance Controls}
+    \footnotesize
+    \begin{tabular}{@{}llll@{}}
+        \toprule
+                           &\multicolumn{1}{c}{(1)}   &\multicolumn{1}{c}{(2)}   &\multicolumn{1}{c}{(3)}  \\
+                           & Property & Human Threat & Human Injury \\ \midrule
+        Male        &       0.023   &       0.041   &      -0.014   \\
+                    &     (0.038)   &     (0.039)   &     (0.042)   \\
+        National    &      -0.114   &      -0.066   &       0.109   \\
+                    &     (0.098)   &     (0.102)   &     (0.111)   \\
+        Hist. Range &      -0.183   &       0.139   &       0.094   \\
+                    &     (0.201)   &     (0.205)   &     (0.223)   \\
+        Dist to Current Range&      -0.000   &       0.000   &       0.000   \\
+                    &     (0.000)   &     (0.000)   &     (0.000)   \\
+        Dist to Current Range (quad)&       0.000   &       0.000   &       0.000   \\
+                    &     (0.000)   &     (0.000)   &     (0.000)   \\\midrule                       
+        Constant    &       1.648***&       0.882***&       0.791***\\
+                    &     (0.264)   &     (0.272)   &     (0.292)   \\
+        Observations & 1,157    &  1,157       & 1,157        \\\bottomrule
+    \end{tabular}
+    \begin{minipage}{.9\textwidth}
+        \vspace{1em}
+    \footnotesize{{\bf{Note:}} This table reports the coefficient for male and region indicators and distance variables in equation~\ref{eqn:main}. In column (1), we measure the believed number of property encounters before removal. In column (2), we measure the believed number of human threat encounters before removal. In column (3), we measure the believed number of human injury encounters before removal. Clustered standard errors are provided in the parentheses below the coefficient estimates. ***, **, * indicates 1\%, 5\%, and 10\% statistical significance, respectively.}
+    \label{tab: bel_gen}
+    \end{minipage}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Coefficients Table for Believed Number of Encounters - Land Characteristic Controls}
+    \footnotesize
+    \begin{tabular}{@{}llll@{}}
+        \toprule
+                           &\multicolumn{1}{c}{(1)}   &\multicolumn{1}{c}{(2)}   &\multicolumn{1}{c}{(3)}  \\
+                           & Property & Human Threat & Human Injury \\ \midrule
+        Developed Land&      -0.260   &       0.264   &       0.405   \\
+                    &     (0.280)   &     (0.283)   &     (0.313)   \\
+        Cropland    &       0.259   &      -0.698   &      -0.574   \\
+                    &     (0.563)   &     (0.598)   &     (0.641)   \\
+        Pasture Land&       0.288   &       1.427   &       0.447   \\
+                    &     (1.146)   &     (1.152)   &     (1.284)   \\
+        Grassland   &      -1.100   &       0.160   &       0.175   \\
+                    &     (0.708)   &     (0.775)   &     (0.809)   \\\midrule                       
+        Constant    &       1.648***&       0.882***&       0.791***\\
+                    &     (0.264)   &     (0.272)   &     (0.292)   \\
+        Observations & 1,157    &  1,157       & 1,157        \\\bottomrule
+    \end{tabular}
+    \begin{minipage}{.9\textwidth}
+        \vspace{1em}
+    \footnotesize{{\bf{Note:}} This table reports the coefficient for land characteristic variables in equation~\ref{eqn:main}. In column (1), we measure the believed number of property encounters before removal. In column (2), we measure the believed number of human threat encounters before removal. In column (3), we measure the believed number of human injury encounters before removal. Clustered standard errors are provided in the parentheses below the coefficient estimates. ***, **, * indicates 1\%, 5\%, and 10\% statistical significance, respectively.}
+    \label{tab: bel_land}
+    \end{minipage}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Coefficients Table for Believed Number of Encounters - Interaction Controls}
+    \footnotesize
+    \begin{tabular}{@{}llll@{}}
+        \toprule
+                           &\multicolumn{1}{c}{(1)}   &\multicolumn{1}{c}{(2)}   &\multicolumn{1}{c}{(3)}  \\
+                           & Property & Human Threat & Human Injury \\ \midrule
+        Dist to Current Griz $\times$ Cropland&      -0.000   &       0.000   &       0.000   \\
+                    &     (0.000)   &     (0.000)   &     (0.000)   \\
+        Dist to Current Griz $\times$ Pasture Land&       0.000   &      -0.000   &      -0.000   \\
+                    &     (0.000)   &     (0.000)   &     (0.000)   \\
+        Dist to Current Griz $\times$ Grassland&       0.000   &      -0.000   &      -0.000   \\
+                    &     (0.000)   &     (0.000)   &     (0.000)   \\
+        Dist to Current Griz $\times$ Developed land&       0.000   &      -0.000   &      -0.000   \\
+                    &     (0.000)   &     (0.000)   &     (0.000)   \\
+        Dist to Hist Griz $\times$ Cropland&      -0.415   &       0.764   &       0.677   \\
+                    &     (0.508)   &     (0.533)   &     (0.570)   \\
+        Dist to Hist Griz $\times$ Pasture Land&      -0.225   &      -1.569   &       0.095   \\
+                    &     (0.951)   &     (0.971)   &     (1.044)   \\
+        Dist to Hist Griz $\times$ Grass Land&       0.911   &      -0.200   &      -0.010   \\
+                    &     (0.647)   &     (0.712)   &     (0.742)   \\
+        Dist to Hist Griz $\times$ Developed land&       0.269   &      -0.198   &      -0.273   \\
+                    &     (0.254)   &     (0.257)   &     (0.282)   \\\midrule                       
+        Constant    &       1.648***&       0.882***&       0.791***\\
+                    &     (0.264)   &     (0.272)   &     (0.292)   \\
+        Observations & 1,157    &  1,157       & 1,157        \\\bottomrule
+    \end{tabular}
+    \begin{minipage}{.9\textwidth}
+        \vspace{1em}
+    \footnotesize{{\bf{Note:}} This table reports the coefficient for interacted variables in equation~\ref{eqn:main}. In column (1), we measure the believed number of property encounters before removal. In column (2), we measure the believed number of human threat encounters before removal. In column (3), we measure the believed number of human injury encounters before removal. Clustered standard errors are provided in the parentheses below the coefficient estimates. ***, **, * indicates 1\%, 5\%, and 10\% statistical significance, respectively.}
+    \label{tab: bel_int}
+    \end{minipage}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Coefficients Table for Preferred Number of Encounters - Income Controls}
+    \footnotesize
+    \begin{tabular}{@{}llll@{}}
+        \toprule
+                           &\multicolumn{1}{c}{(1)}   &\multicolumn{1}{c}{(2)}   &\multicolumn{1}{c}{(3)}  \\
+                           & Property & Human Threat & Human Injury \\ \midrule
+        Between \$15,000 and \$24,999&       0.008   &      -0.117   &      -0.218***\\
+                    &     (0.073)   &     (0.074)   &     (0.081)   \\
+        Between \$25,000 and \$34,999&       0.041   &      -0.114   &      -0.099   \\
+                    &     (0.070)   &     (0.070)   &     (0.075)   \\
+        Between \$35,000 and \$49,999&       0.119*  &      -0.059   &      -0.154** \\
+                    &     (0.071)   &     (0.071)   &     (0.078)   \\
+        Between \$50,000 and \$64,999&       0.132*  &       0.022   &      -0.040   \\
+                    &     (0.069)   &     (0.069)   &     (0.074)   \\
+        Between \$65,000 and \$74,999&       0.122   &      -0.029   &      -0.050   \\
+                    &     (0.086)   &     (0.087)   &     (0.094)   \\
+        Between \$75,000 and \$99,999&       0.035   &      -0.079   &      -0.101   \\
+                    &     (0.074)   &     (0.074)   &     (0.080)   \\
+        Between \$100,000 and \$149,999&       0.028   &      -0.034   &      -0.127   \\
+                    &     (0.080)   &     (0.080)   &     (0.088)   \\
+        Between \$150,000 and \$199,999&      -0.037   &      -0.127   &      -0.021   \\
+                    &     (0.115)   &     (0.117)   &     (0.126)   \\
+        \$200,000 or more&       0.149   &      -0.060   &      -0.265*  \\
+                    &     (0.128)   &     (0.127)   &     (0.141)   \\\midrule                       
+        Constant    &       1.353***&       1.464***&       1.200***\\
+            &     (0.267)   &     (0.269)   &     (0.289)   \\
+        Observations & 1,157    &  1,157       & 1,157        \\\bottomrule
+    \end{tabular}
+    \begin{minipage}{.9\textwidth}
+            \vspace{1em}
+    \footnotesize{{\bf{Note:}} This table reports the coefficient for income variables in equation~\ref{eqn:main}. In column (1), we measure the preferred number of property encounters before removal. In column (2), we measure the preferred number of human threat encounters before removal. In column (3), we measure the preferred number of human injury encounters before removal. Clustered standard errors are provided in the parentheses below the coefficient estimates. ***, **, * indicates 1\%, 5\%, and 10\% statistical significance, respectively.}
+    \label{tab: des_inc}
+    \end{minipage}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Coefficients Table for Preferred Number of Encounters - Age Controls}
+    \footnotesize
+    \begin{tabular}{@{}llll@{}}
+        \toprule
+                           &\multicolumn{1}{c}{(1)}   &\multicolumn{1}{c}{(2)}   &\multicolumn{1}{c}{(3)}  \\
+                           & Property & Human Threat & Human Injury \\ \midrule
+        20 to 24 years&      -0.051   &      -0.022   &       0.002   \\
+                    &     (0.122)   &     (0.120)   &     (0.124)   \\
+        25 to 34 years&      -0.060   &      -0.106   &      -0.145   \\
+                    &     (0.115)   &     (0.112)   &     (0.117)   \\
+        35 to 44 years&       0.052   &      -0.118   &      -0.222*  \\
+                    &     (0.115)   &     (0.112)   &     (0.118)   \\
+        45 to 54 years&       0.007   &      -0.174   &      -0.298** \\
+                    &     (0.118)   &     (0.115)   &     (0.122)   \\
+        55 to 59 years&      -0.035   &      -0.166   &      -0.312** \\
+                    &     (0.122)   &     (0.121)   &     (0.128)   \\
+        60 to 64 years&      -0.062   &      -0.183   &      -0.380***\\
+                    &     (0.122)   &     (0.120)   &     (0.128)   \\
+        65 to 74 years&      -0.029   &      -0.249** &      -0.392***\\
+                    &     (0.120)   &     (0.118)   &     (0.125)   \\
+        75 to 84 years&      -0.149   &      -0.209   &      -0.367** \\
+                    &     (0.139)   &     (0.138)   &     (0.148)   \\
+        85 years or more&      -0.145   &      -0.373   &      -0.332   \\
+                    &     (0.253)   &     (0.265)   &     (0.282)   \\\midrule                       
+        Constant    &       1.353***&       1.464***&       1.200***\\
+            &     (0.267)   &     (0.269)   &     (0.289)   \\
+        Observations & 1,157    &  1,157       & 1,157        \\\bottomrule
+    \end{tabular}
+    \begin{minipage}{.9\textwidth}
+            \vspace{1em}
+    \footnotesize{{\bf{Note:}} This table reports the coefficient for age variables in equation~\ref{eqn:main}. In column (1), we measure the preferred number of property encounters before removal. In column (2), we measure the preferred number of human threat encounters before removal. In column (3), we measure the preferred number of human injury encounters before removal. Clustered standard errors are provided in the parentheses below the coefficient estimates. ***, **, * indicates 1\%, 5\%, and 10\% statistical significance, respectively.}
+    \label{tab: des_age}
+    \end{minipage}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Coefficients Table for Preferred Number of Encounters - Ideology and Education Controls}
+    \footnotesize
+    \begin{tabular}{@{}llll@{}}
+        \toprule
+                           &\multicolumn{1}{c}{(1)}   &\multicolumn{1}{c}{(2)}   &\multicolumn{1}{c}{(3)}  \\
+                           & Property & Human Threat & Human Injury \\ \midrule
+        Liberal     &       0.001   &       0.067   &      -0.041   \\
+                    &     (0.086)   &     (0.085)   &     (0.092)   \\
+        Moderate    &      -0.093   &      -0.033   &      -0.066   \\
+                    &     (0.076)   &     (0.076)   &     (0.082)   \\
+        Conservative&      -0.118   &      -0.024   &      -0.079   \\
+                    &     (0.080)   &     (0.080)   &     (0.087)   \\
+        Very conservative&      -0.225** &      -0.089   &      -0.033   \\
+                    &     (0.092)   &     (0.092)   &     (0.099)   \\
+        HS Graduate &      -0.115   &      -0.042   &      -0.096   \\
+                    &     (0.115)   &     (0.116)   &     (0.121)   \\
+        Some college&      -0.028   &      -0.039   &      -0.195   \\
+                    &     (0.115)   &     (0.117)   &     (0.122)   \\
+        Associate's Degree&      -0.010   &      -0.002   &      -0.044   \\
+                    &     (0.122)   &     (0.124)   &     (0.130)   \\
+        Bachelor's Degree&      -0.044   &      -0.043   &      -0.155   \\
+                    &     (0.121)   &     (0.121)   &     (0.128)   \\
+        Graduate Degree&      -0.098   &      -0.038   &      -0.068   \\
+                    &     (0.128)   &     (0.129)   &     (0.136)   \\\midrule                       
+        Constant    &       1.353***&       1.464***&       1.200***\\
+            &     (0.267)   &     (0.269)   &     (0.289)   \\
+        Observations & 1,157    &  1,157       & 1,157        \\\bottomrule
+    \end{tabular}
+    \begin{minipage}{.9\textwidth} 
+            \vspace{1em}
+    \footnotesize{{\bf{Note:}} This table reports the coefficient for political ideology and educational attainment variables in equation~\ref{eqn:main}. In column (1), we measure the preferred number of property encounters before removal. In column (2), we measure the preferred number of human threat encounters before removal. In column (3), we measure the preferred number of human injury encounters before removal. Clustered standard errors are provided in the parentheses below the coefficient estimates. ***, **, * indicates 1\%, 5\%, and 10\% statistical significance, respectively.}
+    \label{tab: des_edu}
+    \end{minipage}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Coefficients Table for Preferred Number of Encounters - Remaining Demographic and Distance Controls}
+    \footnotesize
+    \begin{tabular}{@{}llll@{}}
+        \toprule
+                           &\multicolumn{1}{c}{(1)}   &\multicolumn{1}{c}{(2)}   &\multicolumn{1}{c}{(3)}  \\
+                           & Property & Human Threat & Human Injury \\ \midrule
+        Male        &       0.057   &       0.028   &      -0.008   \\
+                    &     (0.038)   &     (0.038)   &     (0.042)   \\
+        National    &      -0.078   &      -0.036   &       0.169   \\
+                    &     (0.097)   &     (0.101)   &     (0.109)   \\
+                    &     (0.098)   &     (0.102)   &     (0.111)   \\
+        Hist. Range &      -0.183   &       0.139   &       0.094   \\
+                    &     (0.201)   &     (0.205)   &     (0.223)   \\
+        Hist. Range &       0.165   &      -0.082   &       0.214   \\
+                    &     (0.203)   &     (0.205)   &     (0.224)   \\
+        Dist to Current Range&       0.000   &       0.000   &      -0.000   \\
+                    &     (0.000)   &     (0.000)   &     (0.000)   \\
+        Dist to Current Range (quad)&      -0.000   &      -0.000   &       0.000   \\
+                    &     (0.000)   &     (0.000)   &     (0.000)   \\\midrule                       
+        Constant    &       1.353***&       1.464***&       1.200***\\
+            &     (0.267)   &     (0.269)   &     (0.289)   \\
+        Observations & 1,157    &  1,157       & 1,157        \\\bottomrule
+    \end{tabular}
+    \begin{minipage}{.9\textwidth}
+        \vspace{1em}
+    \footnotesize{{\bf{Note:}} This table reports the coefficient for male and region indicators and distance variables in equation~\ref{eqn:main}. In column (1), we measure the preferred number of property encounters before removal. In column (2), we measure the preferred number of human threat encounters before removal. In column (3), we measure the preferred number of human injury encounters before removal. Clustered standard errors are provided in the parentheses below the coefficient estimates. ***, **, * indicates 1\%, 5\%, and 10\% statistical significance, respectively.}
+    \label{tab: des_gen}
+    \end{minipage}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Coefficients Table for Preferred Number of Encounters - Land Characteristic Controls}
+    \footnotesize
+    \begin{tabular}{@{}llll@{}}
+        \toprule
+                           &\multicolumn{1}{c}{(1)}   &\multicolumn{1}{c}{(2)}   &\multicolumn{1}{c}{(3)}  \\
+                           & Property & Human Threat & Human Injury \\ \midrule
+        Developed Land&       0.221   &       0.007   &       0.229   \\
+                    &     (0.283)   &     (0.286)   &     (0.314)   \\
+        Cropland    &      -0.348   &      -1.065*  &      -1.006   \\
+                    &     (0.558)   &     (0.585)   &     (0.644)   \\
+        Pasture Land&       1.963*  &       0.644   &      -0.079   \\
+                    &     (1.159)   &     (1.170)   &     (1.301)   \\
+        Grassland   &       0.063   &      -0.527   &       0.145   \\
+                    &     (0.696)   &     (0.771)   &     (0.826)   \\\midrule                       
+        Constant    &       1.353***&       1.464***&       1.200***\\
+            &     (0.267)   &     (0.269)   &     (0.289)   \\
+        Observations & 1,157    &  1,157       & 1,157        \\\bottomrule
+    \end{tabular}
+    \begin{minipage}{.9\textwidth}
+        \vspace{1em}
+    \footnotesize{{\bf{Note:}} This table reports the coefficient for land characteristic variables in equation~\ref{eqn:main}. In column (1), we measure the preferred number of property encounters before removal. In column (2), we measure the preferred number of human threat encounters before removal. In column (3), we measure the preferred number of human injury encounters before removal. Clustered standard errors are provided in the parentheses below the coefficient estimates. ***, **, * indicates 1\%, 5\%, and 10\% statistical significance, respectively.}
+    \label{tab: des_land}
+    \end{minipage}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Coefficients Table for Preferred Number of Encounters - Interaction Controls}
+    \footnotesize
+    \begin{tabular}{@{}llll@{}}
+        \toprule
+                           &\multicolumn{1}{c}{(1)}   &\multicolumn{1}{c}{(2)}   &\multicolumn{1}{c}{(3)}  \\
+                           & Property & Human Threat & Human Injury \\ \midrule
+        Dist to Current Griz $\times$ Cropland&       0.000   &       0.000*  &       0.000*  \\
+                    &     (0.000)   &     (0.000)   &     (0.000)   \\
+        Dist to Current Griz $\times$ Pasture Land&      -0.000*  &      -0.000   &      -0.000   \\
+                    &     (0.000)   &     (0.000)   &     (0.000)   \\
+        Dist to Current Griz $\times$ Grassland&       0.000   &       0.000   &      -0.000   \\
+                    &     (0.000)   &     (0.000)   &     (0.000)   \\
+        Dist to Current Griz $\times$ Developed land&      -0.000   &      -0.000   &      -0.000   \\
+                    &     (0.000)   &     (0.000)   &     (0.000)   \\
+        Dist to Hist Griz $\times$ Cropland&       0.311   &       0.958*  &       0.946*  \\
+                    &     (0.500)   &     (0.524)   &     (0.573)   \\
+        Dist to Hist Griz $\times$ Pasture Land&      -0.997   &      -0.397   &      -0.726   \\
+                    &     (0.908)   &     (0.960)   &     (1.071)   \\
+        Dist to Hist Griz $\times$ Grass Land&      -0.139   &       0.570   &      -0.057   \\
+                    &     (0.633)   &     (0.706)   &     (0.756)   \\
+        Dist to Hist Griz $\times$ Developed land&      -0.067   &       0.047   &      -0.154   \\
+                    &     (0.257)   &     (0.258)   &     (0.282)   \\\midrule                       
+        Constant    &       1.353***&       1.464***&       1.200***\\
+            &     (0.267)   &     (0.269)   &     (0.289)   \\
+        Observations & 1,157    &  1,157       & 1,157        \\\bottomrule
+    \end{tabular}
+    \begin{minipage}{.9\textwidth}
+        \vspace{1em}
+    \footnotesize{{\bf{Note:}} This table reports the coefficient for interacted variables in equation~\ref{eqn:main}. In column (1), we measure the preferred number of property encounters before removal. In column (2), we measure the preferred number of human threat encounters before removal. In column (3), we measure the preferred number of human injury encounters before removal. Clustered standard errors are provided in the parentheses below the coefficient estimates. ***, **, * indicates 1\%, 5\%, and 10\% statistical significance, respectively.}
+    \label{tab: des_int}
+    \end{minipage}
+\end{table}
+
+
+
+\section{Survey Instrument}
+\label{sec:survey}
+\newlength{\oldparindent}%
+\setlength{\oldparindent}{\parindent}% save old indentation amount
+\setlength{\parindent}{0em}% zero out indentation
+
+{\large\textbf{Informed Consent}}\\
+You are being asked to complete this online survey as part of a research study on wildlife management. No prior knowledge is needed, but your careful participation is important for the results to help wildlife management.
+
+This survey is estimated to take \underline{about 7 minutes to complete}. Participation is completely voluntary. No identifying information will be recorded. Responses will remain completely confidential. There are no known risks associated with participation beyond those of everyday life.\\
+
+For additional information, contact the research team at the University of Wyoming (tcherry@uwyo.edu), and you may contact the Institutional Review Board at the University of Wyoming (irb@uwyo.edu) if you have questions about your rights as a participant.\\
+
+By continuing to the survey, you consent to participating. Thank you.
+\newpage
+{\large\textbf{Quota Questions}}\\
+\noindent Quota intro in order for us to ensure proper representation, please answer the following demographic questions. Your answers will be confidential.\\
+
+Q1. In which state do you currently reside?
+
+\textit{Dropdown menu with a list of U.S. states.}\\
+
+Q2. What is your age?
+\begin{enumerate}
+    \item[a.] 18 to 19 years
+    \item[b.] 20 to 24 years
+    \item[c.] 25 to 34 years
+    \item[d.] 35 to 44 years
+    \item[e.] 45 to 54 years
+    \item[f.] 55 to 59 years
+    \item[g.] 60 to 64 years
+    \item[h.] 65 to 74 years
+    \item[i.] 75 to 84 years
+    \item[j.] 85 years or more
+\end{enumerate}
+
+Q3. What is your sex?
+\begin{enumerate}
+    \item[a.] Male
+    \item[b.] Female
+    \item[c.] No response
+\end{enumerate}
+\textit{Page Break}
+\newpage
+
+{\large\textbf{Warm Up Questions}}\\
+Q4. How important are national parks to you?
+\begin{enumerate}
+    \item[a.] Very important
+    \item[b.] Important
+    \item[c.] Slightly important
+    \item[d.] Not important at all
+\end{enumerate}
+
+Q5. How informed are you about wildlife management in the northern rocky mountain region? (Montana, Wyoming, Idaho)
+\begin{enumerate}
+    \item[a.] Very informed
+    \item[b.] Informed
+    \item[c.] Slightly informed
+    \item[d.] Not informed at all
+\end{enumerate}
+
+Q6. In particular, how informed are you about management of grizzly bears in the northern rocky mountain region? (Montana, Wyoming, Idaho)
+\begin{enumerate}
+    \item[a.] Very informed
+    \item[b.] Informed
+    \item[c.] Slightly informed
+    \item[d.] Not informed at all
+\end{enumerate}
+\textit{Page Break}
+\newpage
+{\large\textbf{Background Information}}\\
+\textbf{Grizzly Bear Recovery in the Northern Rocky Mountains}
+
+Grizzly bears were listed as an endangered species in 1975. Due to management and conservation efforts, their numbers have been recovering well in the northern rocky mountain region (Montana, Wyoming, and Idaho).\\
+
+The purpose of this survey is to gather public input on the management of grizzly bears in the northern rocky mountain region.\\
+
+Participation does not require prior knowledge. We will first provide you the necessary background information before asking for your input.\\
+\textit{Page Break}
+\newpage
+\textbf{The Basics of Grizzly Bear Management}
+
+Grizzly bear management identifies how to respond to \textit{problematic} bear encounters. The \textbf{management response} depends on the type of \textbf{bear encounter}. Generally, there are 3 types of bear encounters and 2 types of management responses.\\
+
+\textbf{BEAR ENCOUNTERS} are defined as \textit{property}, \textit{human threat}, or \textit{human injury}, each described as: 
+\begin{itemize}
+    \item \textbf{Property} - the bear accessed human or livestock food or attacked/killed livestock.
+    \item \textbf{Human Threat} - the bear was aggressive towards people or caused minor injury to a person.
+    \item \textbf{Human Injury} - the bear caused significant injury to a person or killed a person.
+\end{itemize}
+
+\textbf{MANAGEMENT RESPONSES} separate the bear from the situation by relocation or removal, each described as:
+\begin{itemize}
+    \item \textbf{Relocation} - the bear is moved away, typically 40-90 miles away from the encounter
+    \item \textbf{Removal} - the bear is euthanized (i.e., killed).
+\end{itemize}
+\textit{Page Break}
+\newpage
+\textbf{Relocation and Removal Thresholds}
+
+The \textit{number} and \textit{type} of encounters by a bear determines if that bear is a problem and needs to be relocated or removed.\\
+
+\underline{The relocation threshold} is the number of encounters that causes the bear to be relocated. At this and each subsequent encounter, the bear is \textit{relocated} (i.e., moved 40-90 miles away from location).\\
+
+\underline{The removal threshold} is the number of encounters that causes the bear to be removed. At this encounter, the bear is \textit{removed} (i.e., killed).\\
+
+Keep in mind:
+\begin{itemize}
+    \item Since relocation isn't an option once a bear is removed (i.e., killed), \textbf{the removal threshold cannot be \textit{less} than the relocation threshold.}
+    \item Because each type of encounter presents different risks, \textbf{there are different thresholds for each type of encounter.}
+\end{itemize}
+\textit{Page Break}
+\newpage
+\textbf{The Purpose of this Survey}
+
+The focus of this survey is to help identify the appropriate thresholds that trigger relocation and removal.\\
+
+By setting higher or lower thresholds, grizzly bears have more or less freedom of movement.\\
+
+\textbf{Female grizzly bears} are important for reproduction, so they provide a useful benchmark for setting thresholds. Thus, \textit{all questions are concerned with female grizzly bears}.\\ 
+
+In the next two sections, we will ask:
+\begin{itemize}
+    \item what you think are the actual thresholds in current policy, and
+    \item what you think should be the thresholds in your ideal policy.
+\end{itemize}
+\textit{Page Break}
+\newpage
+{\large\textbf{Management Questions}}\\
+\textbf{Your Beliefs About Current Policy}
+
+In this section, we will ask for \underline{your best guess of the \textbf{actual} thresholds used in current grizzly} \underline{bear management policy.}\\
+
+Q7. For each type of encounter, give your best guess of the \textit{current policy's removal threshold}. In other words, what do you think the current number of \textbf{encounters} that \textit{causes} a bear to be \textbf{removed}?
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/el_removal.png}
+\end{figure}
+
+Q8. For each type of encounter, give your \textit{preferred removal threshold (if any) in an ideal policy}. In other, words, what do you think \textit{should be} the number of \textbf{encounters} that \textit{causes} a bear to be \textbf{removed}?
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/pref_removal.png}
+\end{figure}
+\textit{Page Break}
+\newpage
+Q9. Grizzly bears are currently listed as an endangered species. If grizzly bears recovered enough to no longer be listed as endangered, generally do you think grizzly bear management should increase or decrease the thresholds that trigger a response?
+\begin{enumerate}
+    \item[a.] Increase (more lenient) thresholds
+    \item[b.] Decrease (more strict) thresholds
+    \item[c.] Do not change thresholds 
+\end{enumerate}
+\textit{Page Break}
+\newpage
+{\large\textbf{Personal Information}}\\
+Finally, we would like to ask some questions about you. Your answers to these questions are extremely important to make sure that our analysis is reliable and that results can better inform policy. Again, your answers will remain strictly confidential.\\
+
+Q10. In the past five years, how many times have you visited one or more national parks?
+\begin{enumerate}
+    \item[a.] More than 15 times
+    \item[b.] 11 to 15 times
+    \item[c.] 6 to 10 times
+    \item[d.] 1 to 5 times
+    \item[e.] No visits in past five years
+\end{enumerate}
+
+Q11. Please select `agree' to show that you are paying attention to the survey.
+\begin{enumerate}
+    \item[a.] Strongly agree
+    \item[b.] Agree
+    \item[c.] Neither agree or disagree
+    \item[d.] Disagree
+    \item[e.] Strongly disagree
+\end{enumerate}
+
+Q12. In the past five years, how many times have you visited a national park in the northern rocky mountain region? This includes: Glacier National Park (Montana), Yellowstone National Park (Wyoming/Montana/Idaho), and Grand Teton National Park (Wyoming).
+\begin{enumerate}
+    \item[a.] More than 15 times
+    \item[b.] 11 to 15 times
+    \item[c.] 6 to 10 times
+    \item[d.] 1 to 5 times
+    \item[e.] No visits in past five years
+\end{enumerate}
+
+Q13. What is your experience with grizzly bears? (select all that apply)
+\begin{enumerate}
+    \item[a.] No experience
+    \item[b.] Observed bear from a safe distance
+    \item[c.] Encountered bear from unsafe distance
+    \item[d.] Property damage by bear
+    \item[e.] Physical harm by bear
+\end{enumerate}
+\newpage
+Q14. Have you ever lived within 100 miles of area currently inhabited by grizzly bears? If so, how long have you lived in this area? See map: The blue area illustrates the area currently inhabited by bears.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/bearmap.png}
+\end{figure}
+\begin{enumerate}
+    \item[a.] No, I do not and have not ever lived in this area.
+    \item[b.] Yes, 1-2 years
+    \item[c.] Yes, 3-4 years
+    \item[d.] yes, 5+ years
+\end{enumerate}
+\textit{If respondents answered yes to living within 100 miles of area currently inhabited by grizzly bears (answered b, c, or d to Question 14), they see Questions 15 through 17b. If they do not, skip to Question 18.}
+\newpage
+
+Q15. How much do you agree or disagree with the following statement: grizzly bears are frequently a nuisance and interrupt my personal normal routine?
+\begin{enumerate}
+    \item[a.] Strongly disagree
+    \item[b.] Disagree
+    \item[c.] Neither agree or disagree
+    \item[d.] Agree
+    \item[e.] Strongly agree
+\end{enumerate}
+
+Q16. Have you or anyone in your extended family owned/worked on a farm or ranch that is/was directly affected by grizzly bears?
+\begin{enumerate}
+    \item[a.] Yes
+    \item[b.] No
+\end{enumerate}
+\newpage
+Q17a. What actions have you taken to reduce grizzly bear problems? [select all that apply]
+\begin{enumerate}
+    \item[a.] Neighbor Network (Phone-tree, group text, or email list that gives updates from authorities)
+    \item[b.] Livestock Carcass Management (Removal of carcasses)
+    \item[c.] Electric Fence
+    \item[d.] Preventing access to crops, grain, and/or livestock foods
+    \item[e.] Use of bear-proof trash cans
+    \item[f.] Herding and husbandry practices
+    \item[g.] Frightening and scare devices (sirens, strobe lights, motion sprinkler systems, etc)
+    \item[h.] Verified Compensation Programs
+    \item[i.] Carrying of bear spray when outdoors
+    \item[j.] Carrying a bear gun
+    \item[k.] I've taken none of these actions
+\end{enumerate}
+\newpage
+\textit{If respondents answered anything other than "I've taken none of these actions," they see Question 17b. Otherwise, skip to Question 18.}
+
+Q17b. Of the actions you've taken, when have been effective at preventing grizzly bear problems? [select all that apply]
+\begin{enumerate}
+    \item[a.] Neighbor Network (Phone-tree, group text, or email list that gives updates from authorities)
+    \item[b.] Livestock Carcass Management (Removal of carcasses)
+    \item[c.] Electric Fence
+    \item[d.] Preventing access to crops, grain, and/or livestock foods
+    \item[e.] Use of bear-proof trash cans
+    \item[f.] Herding and husbandry practices
+    \item[g.] Frightening and scare devices (sirens, strobe lights, motion sprinkler systems, etc)
+    \item[h.] Verified Compensation Programs
+    \item[i.] Carrying of bear spray when outdoors
+    \item[j.] Carrying a bear gun
+    \item[k.] I've taken none of these actions
+\end{enumerate}
+\textit{Page Break}
+\newpage
+Q18. What is the highest level of school/degree you have completed?
+\begin{enumerate}
+    \item[a.] Less than high school
+    \item[b.] High school graduate
+    \item[c.] Some college
+    \item[d.] Associate degree
+    \item[e.] Bachelor degree
+    \item[f.] Graduate degree
+\end{enumerate}
+
+Q19. In general, how would you describe your views on most political issues?
+\begin{enumerate}
+    \item[a.] Very conservative
+    \item[b.] Conservative
+    \item[c.] Moderate
+    \item[d.] Liberal
+    \item[e.] Very liberal
+\end{enumerate}
+
+Q20. What is your zip code?
+
+\textit{Text entry box}
+
+Q21. As close as you can recall, what is your household's total annual income before taxes?
+\begin{enumerate}
+    \item[a.] Under \$15,000
+    \item[b.] Between \$15,000 and \$24,999
+    \item[c.] Between \$25,000 and \$34,999
+    \item[d.] Between \$35,000 and \$44,999
+    \item[e.] Between \$50,000 and \$64,999
+    \item[f.] Between \$75,000 and \$99,999
+    \item[g.] Between \$100,000 and \$149,999
+    \item[h.] Between \$150,000 and \$199,999
+    \item[i.] \$200,000 or more
+\end{enumerate}
+
+We thank you for your time spent taking this survey. Your response has been recorded.
+
+
+
+\end{document}
