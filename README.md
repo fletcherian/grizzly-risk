@@ -8,11 +8,10 @@ Large predators are returning to landscapes where they were not seen for centuri
 2. Bears_Manuscript.tex - Final paper manuscript in TeX format that generated the PDF file
 3. bears.bib - BibTex file used for citations in the TeX file
 4. Bears_survey.pdf - Full survey instrument (identical to the one at the bottom of Bears_Manuscript.pdf) used to generate primary data
-5. grizzly_gis_variables.csv - Secondary data used for plotting exercises
-6. total_success_gis.csv - Full data file including primary survey data
-7. dofile_grizzlies_mapping.do - STATA code to generate predictors for map generation
-8. relocation.do - STATA code to generate primary survey analysis
-9. plotting.mlx - MATLAB file using results from relocation.do to generate relevant figures comparing means in the paper
-10. figures - Folder containing individual files for each of the figures.
+5. total_success_gis.csv - Full data file including primary survey data and secondary mapping data
+6. mapping.do - STATA code to generate mapping analysis
+7. plotting.mlx - MATLAB code to generate mean comparison analysis
 
 ## How to Replicate Results
+1. Run mapping.do code to generate coefficients used for predictive mapping and upload to ARCGiS to generate the predictive maps
+2. Run the plotting.mlx to generate mean comparison results - means and confidence intervals are calculated from the STATA file and manually inputted into the MATLAB file
