@@ -1,5 +1,9 @@
 # The public overestimates and prefers greater tolerance for grizzly bear encounters than defined by the United States management guidelines
 
+Chandler Hubbard, Ian Fletcher, Todd Cherry, David Finnoff, and Jacob Hochard
+
+Last Updated: October 22, 2025
+
 ## Abstract
 Large predators are returning to landscapes where they have been absent for centuries, but human preferences complicate their recovery. Communities often resist predator recovery because of perceived risks, limiting what managers call social carrying capacity, or the level of human tolerance for coexisting with wildlife. Yet practical methods for measuring and integrating social carrying capacity into management decisions remain limited. To address this, we combine geospatial and survey data to model individual tolerance for the frequency and severity of grizzly bear encounters. The resulting estimates predict and map zip code–level tolerance across the region. Findings show that people tend to overestimate management’s tolerance of encounters than current federal guidelines. This approach provides a pragmatic tool to incorporate social carrying capacity into decisions about predator recovery and reintroduction, helping balance ecological goals with public acceptance.
 
